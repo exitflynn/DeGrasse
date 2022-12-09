@@ -1,6 +1,8 @@
-import discord
+import discord, requests, json
 
-client = discord.Client(intents=discord.Intents.default())
+client = discord.Client(intents=discord.Intents.all())
+
+bot_key = ""
 
 @client.event
 async def on_ready():
@@ -8,10 +10,20 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    sendmsg = "👀"
     # ignore messages from the bot itself
+    print(message.content)
     if message.author == client.user:
         return
-    print("i detect a message!")
-    await message.channel.send("👀")
+    if "?" in message.content:
+        sendmsg = "The universe is under no obligation to make sense to you."
+        nasa_api_key = ""
+    elif "space" in message.content:
+        url = f"https://api.nasa.gov/planetary/apod?api_key={nasa_api_key}"
+        resp = requests.get(url)
+        data = json.loads(resp.text)
+        imgurl = data['hdurl']
+        sendmsg = imgurl
+    await message.channel.send(sendmsg)
 
-client.run("MTA1MDc2MDM0ODEyMDEyNTQ2MA.GnhaVJ.cfwat1MtU1fwB6tyQ-wNE5lMSKVR1WO7_Xa-hI")
+client.run(bot_key)
