@@ -1,12 +1,16 @@
-import discord, requests, json
+import discord, requests, json, argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("-k", "--key", help="NASA API Key")
+args = parser.parse_args()
+api_key = args.key
 
 client = discord.Client(intents=discord.Intents.all())
 
-bot_key = ""
-
 @client.event
 async def on_ready():
-    print("How do you do fellow kids?")
+    print("This bot is now ready. How do you do fellow kids?")
 
 @client.event
 async def on_message(message):
@@ -17,13 +21,15 @@ async def on_message(message):
         return
     if "?" in message.content:
         sendmsg = "The universe is under no obligation to make sense to you."
-        nasa_api_key = ""
     elif "space" in message.content:
-        url = f"https://api.nasa.gov/planetary/apod?api_key={nasa_api_key}"
-        resp = requests.get(url)
-        data = json.loads(resp.text)
-        imgurl = data['hdurl']
-        sendmsg = imgurl
+        if not api_key:
+            sendmsg = "I'd have loved to show you a really awesome space image right about now but alas you didn't pass any API key. You can pass one using the `-k` or the `--key` flag."
+        else:
+            url = f"https://api.nasa.gov/planetary/apod?api_key={api_key}"
+            resp = requests.get(url)
+            data = json.loads(resp.text)
+            imgurl = data['hdurl']
+            sendmsg = imgurl
     await message.channel.send(sendmsg)
 
 client.run(bot_key)
