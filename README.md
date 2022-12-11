@@ -5,8 +5,8 @@ The bot, in it's current state, uses [NASA's APOD API](https://github.com/nasa/a
 
 ## Installation and Setup:
 
--1. Go to the [Discord Developers Portal](https://discord.com/developers/) and create a new bot with intents-enabled.
-0. Sign-up on <https://api.nasa.gov/#signUp> and get the API key. 
+(0. Sign-up on <https://api.nasa.gov/#signUp> and get the API key. Then go to the [Discord Developers Portal](https://discord.com/developers/) and create a new bot.O)
+
 1. Clone the repository:
 ```console
 $ git clone https://github.com/exitflynn/DeGrasse.git
@@ -20,3 +20,5 @@ $ pip install discord
 ```console
 $ python main.py -k <API_KEY>
 ```
+
+In case of any issues feel free to raise an issue on Github. You're also more than welcome to join the Discord server at: <https://discord.gg/HkrJxE5J>
