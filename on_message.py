@@ -1,5 +1,5 @@
 import discord, requests, json, argparse
-
+from config import bot_key
 parser = argparse.ArgumentParser()
 
 parser.add_argument("-k", "--key", help="NASA API Key")
