@@ -6,7 +6,7 @@ The bot, in it's current state, uses [NASA's APOD API](https://github.com/nasa/a
 ## Installation and Setup:
 
 (0. Sign-up on <https://api.nasa.gov/#signUp> and get the API key. 
-Then go to the [Discord Developers Portal](https://discord.com/developers/) and create a new bot.O
+Then go to the [Discord Developers Portal](https://discord.com/developers/) and create a new bot.
 Check all the three intents given under 'Privileged Gateway Intents'
 Under the OAuth2 section check bot scope and check administrator in the permissions section)
 
