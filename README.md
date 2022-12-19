@@ -15,12 +15,11 @@ Under the OAuth2 section check bot scope and check administrator in the permissi
 $ git clone https://github.com/exitflynn/DeGrasse.git
 ```
 2. Add your Discord bot key in `config.py`.
-4. Install the dependencies.
+3. Install the dependencies.
 ```console
-$ pip install discord
-$ pip install requests
+$ pip install -r requirements.txt
 ```
-5. Run the `main.py` and pass the NASA API with the `-k` and the `--key` flag.
+4. Run the `main.py` and pass the NASA API with the `-k` and the `--key` flag.
 ```console
 $ python main.py -k <API_KEY>
 ```
