@@ -17,7 +17,7 @@ $ git clone https://github.com/exitflynn/DeGrasse.git
 2. Add your Discord bot key in `config.py`.
 3. Install the dependencies.
 ```console
-$ pip install -r /path/to/requirements.txt
+$ pip install -r requirements.txt
 ```
 4. Run the `main.py` and pass the NASA API with the `-k` and the `--key` flag.
 ```console
