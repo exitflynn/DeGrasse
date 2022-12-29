@@ -14,11 +14,6 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-<<<<<<< HEAD
-    sendmsg = "👀"
-    sendchannel = message.channel
-=======
->>>>>>> b4d48d9 (removed the eye feature)
     # ignore messages from the bot itself
     print(message.content)
     if message.author == client.user:
