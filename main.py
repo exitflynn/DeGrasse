@@ -30,6 +30,11 @@ async def on_message(message):
         msg_string = await functions.apod(api_key)
         await message.channel.send(msg_string)
     
+    if "mars" in message.content:
+        print(2)
+        msg_string = await functions.marse(api_key)
+        await message.channel.send(msg_string)
+
     else:
     	await message.channel.send(msg_string)
 
