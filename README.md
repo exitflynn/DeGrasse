@@ -24,4 +24,4 @@ $ pip install -r requirements.txt
 $ python main.py -k <API_KEY>
 ```
 
-In case of any issues feel free to raise an issue on Github. You're also more than welcome to join the Discord server at: <https://discord.gg/HkrJxE5J>
+In case of any issues feel free to raise an issue on Github. You're also more than welcome to join the Discord server at: <https://discord.gg/g7dJbrdWGF>
